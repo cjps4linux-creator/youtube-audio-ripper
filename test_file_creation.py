@@ -6,7 +6,7 @@ YouTube Audio Ripper - File creation test
 import subprocess
 from pathlib import Path
 
-OUTPUT_DIR = Path("C:/Users/user/youtube-audio-ripper/ripped_music")
+OUTPUT_DIR = Path(__file__).resolve().parent / "ripped_music"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 print("=" * 60)

@@ -5,10 +5,11 @@ Create desktop shortcut with music icon for YouTube Audio Ripper
 
 from pathlib import Path
 import ctypes
+import os
 
 # Paths
-app_dir = Path("C:/Users/user/youtube-audio-ripper")
-desktop = Path("C:/Users/user/Desktop")
+app_dir = Path(__file__).resolve().parent
+desktop = Path(os.path.expanduser("~")) / "Desktop"
 python_exe = app_dir / "venv/Scripts/python.exe"
 script_file = app_dir / "rip_gui.py"
 shortcut_path = desktop / "YouTube Audio Ripper.lnk"

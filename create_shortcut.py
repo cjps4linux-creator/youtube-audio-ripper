@@ -4,6 +4,7 @@ Create desktop shortcut for YouTube Audio Ripper
 """
 
 from pathlib import Path
+import os
 
 def create_windows_shortcut(target_path, shortcut_path, description="YouTube Audio Ripper"):
     """
@@ -36,8 +37,8 @@ IconIndex=0
     return url_content
 
 # Create desktop shortcut
-desktop_path = Path("C:/Users/user/Desktop")
-app_path = Path("C:/Users/user/youtube-audio-ripper/launch.vbs")
+desktop_path = Path(os.path.expanduser("~")) / "Desktop"
+app_path = Path(__file__).resolve().parent / "launch.vbs"
 shortcut_name = "YouTube Audio Ripper"
 
 # Method 1: Create a .url shortcut (works everywhere)

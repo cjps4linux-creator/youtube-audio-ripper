@@ -4,11 +4,16 @@ Create desktop shortcut with icon for YouTube Audio Ripper
 """
 
 from pathlib import Path
-from win32com.client import Dispatch
+import os
+
+try:
+    from win32com.client import Dispatch
+except ImportError:  # pywin32 is Windows-only and optional
+    Dispatch = None
 
 # Paths
-app_dir = Path("C:/Users/user/youtube-audio-ripper")
-desktop = Path("C:/Users/user/Desktop")
+app_dir = Path(__file__).resolve().parent
+desktop = Path(os.path.expanduser("~")) / "Desktop"
 python_exe = app_dir / "venv/Scripts/python.exe"
 script_file = app_dir / "rip_gui.py"
 shortcut_path = desktop / "YouTube Audio Ripper.lnk"
@@ -35,6 +40,10 @@ def create_simple_ico():
 
 # Create shortcut
 def create_shortcut():
+    if Dispatch is None:
+        print("pywin32 is not installed - cannot create a .lnk shortcut.")
+        print("Install it with: pip install pywin32")
+        return
     shell = Dispatch('WScript.Shell')
     shortcut = shell.CreateShortCut(str(shortcut_path))
     shortcut.Targetpath = str(python_exe)

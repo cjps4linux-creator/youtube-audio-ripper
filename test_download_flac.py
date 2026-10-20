@@ -11,7 +11,7 @@ from pathlib import Path
 # Test with Rickroll (public video)
 url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 temp_dir = Path(tempfile.gettempdir())
-output_dir = Path("C:/Users/user/youtube-audio-ripper/ripped_music")
+output_dir = Path(__file__).resolve().parent / "ripped_music"
 output_dir.mkdir(exist_ok=True)
 
 print("=" * 60)

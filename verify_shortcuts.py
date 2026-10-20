@@ -4,13 +4,14 @@ Test and verify desktop shortcuts for YouTube Audio Ripper
 """
 
 from pathlib import Path
+import os
 
 print("=" * 70)
 print("YouTube Audio Ripper - Desktop Shortcut Test")
 print("=" * 70)
 
 # Check what files exist on desktop
-desktop = Path("C:/Users/user/Desktop")
+desktop = Path(os.path.expanduser("~")) / "Desktop"
 print(f"Desktop directory: {desktop}")
 print()
 
@@ -56,5 +57,5 @@ print("  YouTube-Audio-Ripper.vbs   -> VBScript launcher")
 print("  YouTube-Audio-Ripper.bat   -> Batch file launcher")
 print()
 print("All shortcuts point to:")
-print("  C:/Users/user/youtube-audio-ripper/launch.vbs")
+print(f"  {Path(__file__).resolve().parent / 'launch.vbs'}")
 print("  which runs: ./venv/Scripts/python.exe rip_gui.py")
