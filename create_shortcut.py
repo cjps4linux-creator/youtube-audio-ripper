@@ -3,9 +3,7 @@
 Create desktop shortcut for YouTube Audio Ripper
 """
 
-import os
 from pathlib import Path
-import struct
 
 def create_windows_shortcut(target_path, shortcut_path, description="YouTube Audio Ripper"):
     """

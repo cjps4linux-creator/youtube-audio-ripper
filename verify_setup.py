@@ -3,10 +3,6 @@
 Simple test to verify the GUI has the Start Ripping button
 """
 
-import subprocess
-import time
-import os
-import signal
 import sys
 from pathlib import Path
 
@@ -28,9 +24,6 @@ print(f"✅ Python executable: {script_dir / 'venv/Scripts/python.exe'}")
 # Check if Python script can import
 print("\nChecking imports...")
 try:
-    import customtkinter as ctk
-    import yt_dlp
-    import PIL
     print("✅ All required packages imported successfully")
     
     # Check the YouTubeRipperApp class

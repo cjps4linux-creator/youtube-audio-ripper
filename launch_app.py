@@ -4,7 +4,6 @@ Quick fix: Create a simplified launcher that works reliably
 """
 
 import sys
-import os
 from pathlib import Path
 
 # Add app directory to path

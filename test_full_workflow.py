@@ -5,10 +5,8 @@ Simple test to verify the app works end-to-end
 
 import yt_dlp
 import subprocess
-import os
 from pathlib import Path
 import tempfile
-import time
 
 url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 output_dir = Path("C:/Users/user/youtube-audio-ripper/ripped_music")

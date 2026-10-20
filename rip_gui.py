@@ -7,9 +7,6 @@ Guaranteed to show the START RIPPING button
 import customtkinter as ctk
 import threading
 import subprocess
-import os
-import re
-import tempfile
 from pathlib import Path
 
 # Configuration
@@ -89,7 +86,7 @@ class SimpleRipperApp(ctk.CTk):
             self._log("❌ Enter YouTube URLs first")
             return
         
-        urls = [l.strip() for l in urls_text.split("\n") if l.strip() and ("youtube.com" in l or "youtu.be" in l)]
+        urls = [line.strip() for line in urls_text.split("\n") if line.strip() and ("youtube.com" in line or "youtu.be" in line)]
         if not urls:
             self._log("❌ No valid YouTube URLs found")
             return

@@ -5,8 +5,6 @@ Create desktop shortcut with music icon for YouTube Audio Ripper
 
 from pathlib import Path
 import ctypes
-from ctypes import wintypes
-import struct
 
 # Paths
 app_dir = Path("C:/Users/user/youtube-audio-ripper")
@@ -41,12 +39,12 @@ try:
     shortcut.Save(str(shortcut_path), None)
     
     print(f"✅ Created shortcut: {shortcut_path}")
-    print(f"   Icon: Music note")
+    print("   Icon: Music note")
     print(f"   Target: {python_exe}")
     print(f"   Script: {script_file}")
     
 except Exception as e:
-    print(f"Using fallback method...")
+    print("Using fallback method...")
     # Fallback: create a simple .bat file
     bat_content = f"""@echo off
 title YouTube Audio Ripper

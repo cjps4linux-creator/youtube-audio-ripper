@@ -4,7 +4,6 @@ Quick test of YouTube Audio Ripper GUI
 """
 
 import customtkinter as ctk
-from pathlib import Path
 
 # Configure appearance
 ctk.set_appearance_mode("dark")

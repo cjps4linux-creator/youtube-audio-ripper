@@ -4,7 +4,6 @@ Create desktop shortcut with icon for YouTube Audio Ripper
 """
 
 from pathlib import Path
-import winshell
 from win32com.client import Dispatch
 
 # Paths

@@ -5,8 +5,7 @@ End-to-end test: Download YouTube → FLAC → AI Detection
 
 import yt_dlp
 import subprocess
-import os
-import re
+import tempfile
 from pathlib import Path
 
 url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -19,8 +18,6 @@ print("=" * 60)
 
 # Step 1: Download
 print("\nStep 1: Downloading audio...")
-temp_dir = "/tmp"
-import tempfile
 temp_dir = Path(tempfile.gettempdir())
 temp_file = temp_dir / "youtube_test.opus"
 

@@ -3,7 +3,6 @@
 YouTube Audio Ripper - File creation test
 """
 
-import os
 import subprocess
 from pathlib import Path
 

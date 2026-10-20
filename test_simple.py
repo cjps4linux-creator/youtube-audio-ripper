@@ -4,7 +4,6 @@ Simple test to verify the app works with public videos
 """
 
 import customtkinter as ctk
-from pathlib import Path
 
 # Simple test - should work without authentication
 def test_gui():
@@ -32,36 +31,36 @@ def test_gui():
     input_label = ctk.CTkLabel(
         input_frame,
         text=f"YouTube URL(s) — paste one or more (one per line):\n{test_url}",
-            font=ctk.CTkFont(size=12, weight="bold")
-        )
-        input_label.pack(anchor="w", padx=15, pady=(12, 5))
-        
-        self.url_text = ctk.CTkTextbox(
-            input_frame,
-            height=50,
-            font=ctk.CTkFont(family="Consolas", size=11),
-            wrap="none"
-        )
-        self.url_text.pack(fill="x", padx=15, pady=(0, 10))
-        
-        hint = ctk.CTkLabel(
-            input_frame,
-            text="💡 Tip: Paste URLs directly (Ctrl+V) or enter one per line",
-            font=ctk.CTkFont(size=10),
-            text_color=("gray40", "gray50")
-        )
-        hint.pack(anchor="w", padx=15, pady=(0, 10))
-        
-        # Start button
-        self.rip_button = ctk.CTkButton(
-            main_frame,
-            text="🎵 START RIPPING 🎵",
-            font=ctk.CTkFont(size=14, weight="bold"),
-            height=40,
-            command=lambda: print("Ripping started!"),
-            state="normal"
-        )
-        self.rip_button.pack(side="left", fill="x", expand=True, padx=(0, 5), pady=15)
+        font=ctk.CTkFont(size=12, weight="bold")
+    )
+    input_label.pack(anchor="w", padx=15, pady=(12, 5))
+    
+    url_text = ctk.CTkTextbox(
+        input_frame,
+        height=50,
+        font=ctk.CTkFont(family="Consolas", size=11),
+        wrap="none"
+    )
+    url_text.pack(fill="x", padx=15, pady=(0, 10))
+    
+    hint = ctk.CTkLabel(
+        input_frame,
+        text="💡 Tip: Paste URLs directly (Ctrl+V) or enter one per line",
+        font=ctk.CTkFont(size=10),
+        text_color=("gray40", "gray50")
+    )
+    hint.pack(anchor="w", padx=15, pady=(0, 10))
+    
+    # Start button
+    rip_button = ctk.CTkButton(
+        main_frame,
+        text="🎵 START RIPPING 🎵",
+        font=ctk.CTkFont(size=14, weight="bold"),
+        height=40,
+        command=lambda: print("Ripping started!"),
+        state="normal"
+    )
+    rip_button.pack(side="left", fill="x", expand=True, padx=(0, 5), pady=15)
     
     print("✅ GUI initialized - test button is visible")
     app.mainloop()

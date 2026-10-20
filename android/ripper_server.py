@@ -6,10 +6,8 @@ Tiny HTTP server + yt-dlp + FLAC conversion
 
 import http.server
 import json
-import os
 import re
 import subprocess
-import sys
 import threading
 import time
 import urllib.parse
@@ -714,7 +712,7 @@ def main():
     print(f"   Music folder:    {MUSIC_DIR}")
     print(f"   Cookies:         {'Found' if COOKIES_FILE.exists() else 'Not found (optional)'}")
     print(f"   Node.js:         {'Yes' if _check_node() else 'No (some downloads may fail)'}")
-    print(f"   Press Ctrl+C to stop\n")
+    print("   Press Ctrl+C to stop\n")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

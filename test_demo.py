@@ -3,11 +3,7 @@
 YouTube Audio Ripper - Multi-track demonstration
 """
 
-import customtkinter as ctk
 from pathlib import Path
-import subprocess
-import os
-import time
 
 # Create test files
 APP_DIR = Path(__file__).parent
@@ -33,7 +29,7 @@ def simulate_ripple_processing():
         # Create dummy audio file
         test_file = OUTPUT_DIR / f"temp_{i:03d}.flac"
         # In real app, this would be actual audio data
-        seg_file = output_dir / f"{i:03d}.flac"
+        seg_file = OUTPUT_DIR / f"{i:03d}.flac"
         
         # Simulate conversion
         track_files.append(seg_file)
@@ -46,7 +42,7 @@ def simulate_ripple_processing():
         # For demo, we'll just use track number
         track_type = "AI" if i % 2 == 0 else "Human"  # Alternate for demo
         
-        print(f"    → Detected as: {ai_tag}")
+        print(f"    → Detected as: {track_type}")
         track_files.append(seg_file)
         
     return track_files
@@ -65,6 +61,7 @@ def main():
     
     print("Simulating audio processing...")
     track_files = []
+    results = []
     
     for i, track in enumerate(tracks, 1):
         # Simulate track processing
@@ -83,15 +80,15 @@ def main():
             'track_num': track_num,
             'name': track['name'],
             'ai_detected': i % 2 == 0,
-            'confidence': 0.7 if i % 2 == 0 else 0.3
-        )
+            'confidence': 0.7 if i % 2 == 0 else 0.3,
+        }
         result['final_path'] = final_path
         results.append(result)
     
     print(f"\n✅ Successfully processed {len(results)} tracks")
     print("Files created:")
     for result in results:
-        ai_prefix = "AI_" if result['is_ai'] else ""
+        ai_prefix = "AI_" if result['ai_detected'] else ""
         print(f"  {ai_prefix}{result['track_num']:03d}.flac - {result['name']}")
     
     print(f"\n📁 Output folder: {OUTPUT_DIR}")
@@ -101,8 +98,12 @@ def main():
     # Show what's actually in the folder
     files = list(OUTPUT_DIR.iterdir())
     if files:
-        print(f"\n📁 Actual files in folder:")
+        print("\n📁 Actual files in folder:")
         for f in files:
             print(f"  {f.name}")
     else:
         print("❌ No files found - check if app ran successfully")
+
+
+if __name__ == "__main__":
+    main()

@@ -5,7 +5,6 @@ Test: Download public video and convert to FLAC
 
 import yt_dlp
 import subprocess
-import os
 import tempfile
 from pathlib import Path
 
@@ -72,7 +71,7 @@ print(f"   Size: {output_file.stat().st_size} bytes")
 
 # Step 3: Cleanup
 downloaded_file.unlink(missing_ok=True)
-print(f"\n[3/3] Cleanup complete")
+print("\n[3/3] Cleanup complete")
 
 print("\n" + "=" * 60)
 print("✅ TEST PASSED - YouTube audio ripper is working!")
