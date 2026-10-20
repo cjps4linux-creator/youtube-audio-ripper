@@ -10,7 +10,7 @@ Modern GUI application for downloading YouTube audio, converting to FLAC, and de
 ## Quick Start
 
 ```bash
-cd C:\Users\user\youtube-audio-ripper
+cd path\to\youtube-audio-ripper
 ./venv/Scripts/python.exe rip_gui.py
 ```
 
@@ -27,7 +27,7 @@ cd C:\Users\user\youtube-audio-ripper
 ## File Structure
 
 ```
-C:\Users\user\youtube-audio-ripper\
+path\to\youtube-audio-ripper\
 ├── rip_gui.py            # Main application
 ├── launch.vbs            # Silent Windows launcher
 ├── launch.bat            # Batch file launcher

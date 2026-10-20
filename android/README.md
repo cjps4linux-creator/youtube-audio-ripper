@@ -21,8 +21,8 @@ Connect your phone to the same network as your Windows PC, then:
 
 # From your Windows PC:
 adb connect <your-phone-ip>:<port>
-adb push C:\Users\user\youtube-audio-ripper\android\* /sdcard/YouTubeAudioRipper/
-adb push C:\Users\user\youtube-audio-ripper\android\static /sdcard/YouTubeAudioRipper/
+adb push android\* /sdcard/YouTubeAudioRipper/
+adb push android\static /sdcard/YouTubeAudioRipper/
 ```
 
 ### 3. Set Up Termux
